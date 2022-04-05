@@ -1,13 +1,8 @@
 var aa = [];
 var arrSymbols = [];
 var finalGrade;
-finalGrade=parseInt( localStorage.getItem("scoreTECH"))+parseInt( localStorage.getItem("scoreIQ"))+parseInt( localStorage.getItem("scoreEN"));
-if (finalGrade<10)
-{
-    var x= "...Unfortunately, You Did Not Fulfill Our Requirements, Good Luck! "
-}
-else
- { x="...Congratulation, We Will Arrange With You The Second Interview!"}
+var x;
+
 const quizData = [
     {
         question: "Q1: What does HTML stand for?",
@@ -163,16 +158,28 @@ submitBtn.addEventListener('click', () => {
         else {
 
             localStorage.setItem("scoreTECH", scoreTECH);
-            if(scoreTECH>4)
+             finalGrade=parseInt( localStorage.getItem("scoreTECH"))+parseInt( localStorage.getItem("scoreIQ"))+parseInt( localStorage.getItem("scoreEN"));
+if (finalGrade<10)
+{
+     x= "...Unfortunately, You Did Not Fulfill Our Requirements, Good Luck! "
+}
+else
+ { 
+     x="...Congratulation, We Will Arrange With You The Second Interview!"
+}
+            if(finalGrade>9)
            { 
                
             quiz.innerHTML = `
 
             <h2>you completed technical exam</h2>
             <h2> Your Score Is ${scoreTECH} Out Of 10 </h2>
+
             <a style="text-decoration:none;color:white" href="../html/IQresultt.html"><button  margin-top:0px" >Show  answers</button></a>
             <br> <br>
-            <h3 style="text-align:center ;color: #288f28 ;border-radius: 25px;margin-top:30px; padding:30px height:100px ;width:"320px">Your final Score is ${finalGrade+x} <br> </h3>
+
+
+            <h2 style="text-align:center ;color: #288f28 ;border-radius: 25px;margin-top:30px; padding:30px height:100px ;width:"320px">Your final Score is ${finalGrade+x} <br> </h2>
 
             
         `
@@ -188,7 +195,7 @@ submitBtn.addEventListener('click', () => {
            <a style="text-decoration:none;color:white" href="../html/TechResult.html"><button  margin-top:0px" >Show answers</button></a>
            <br> <br>
 
-           <h3 style="text-align:center ;color: #b22222 ;border-radius: 25px;margin-top:30px; padding:30px height:100px ;width:"320px">Your final Score is ${finalGrade+x} <br> </h3>
+           <h2 style="text-align:center ;color: #b22222 ;border-radius: 25px;margin-top:30px; padding:30px height:100px ;width:"320px">Your Final Score is ${finalGrade+x} <br> </h2>
 
            
            `  }

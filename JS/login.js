@@ -1,8 +1,5 @@
 let buttonElement = document.getElementById("registerBtn");
-
 let spanElement = document.getElementById("spanPass");
-
-
 buttonElement.onclick = function () {
 
         var storedEmail = localStorage.getItem('email');
